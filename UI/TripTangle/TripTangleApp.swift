@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct TripTangleApp: App {
+    // Create an instance of AppRouter as a StateObject
+    @StateObject var router = AppRouter()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environmentObject(router) // Inject router into the environment
         }
     }
 }
