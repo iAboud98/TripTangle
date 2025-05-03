@@ -59,9 +59,8 @@ struct MainView: View {
 
             // Floating Buttons
             HStack {
-                CircleButton(iconName: "line.3.horizontal") {
-                    // Menu action
-                }
+                CircleButton(iconName: "line.3.horizontal",
+                             action: router.goToMenu)
                 Spacer()
                 CircleButton(iconName: "bell",
                              action: router.goToNotification)
