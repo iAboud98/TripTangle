@@ -35,16 +35,6 @@
 			path = TripTangle;
 			sourceTree = "<group>";
 		};
-		3DB10C892DC62F9900030058 /* TripTangleTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TripTangleTests;
-			sourceTree = "<group>";
-		};
-		3DB10C932DC62F9900030058 /* TripTangleUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TripTangleUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				3DB10C782DC62F9800030058 /* TripTangle */,
-				3DB10C892DC62F9900030058 /* TripTangleTests */,
-				3DB10C932DC62F9900030058 /* TripTangleUITests */,
 				3DB10C772DC62F9800030058 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,9 +118,6 @@
 			dependencies = (
 				3DB10C882DC62F9900030058 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				3DB10C892DC62F9900030058 /* TripTangleTests */,
-			);
 			name = TripTangleTests;
 			packageProductDependencies = (
 			);
@@ -152,9 +137,6 @@
 			);
 			dependencies = (
 				3DB10C922DC62F9900030058 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				3DB10C932DC62F9900030058 /* TripTangleUITests */,
 			);
 			name = TripTangleUITests;
 			packageProductDependencies = (
