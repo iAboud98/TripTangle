@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var router: AppRouter
+    
     var body: some View {
         ZStack(alignment: .top) {
             Color.white
@@ -61,12 +63,13 @@ struct MainView: View {
                     // Menu action
                 }
                 Spacer()
-                CircleButton(iconName: "bell") {
-                    // Notification action (user profile step to be added later)
-                }
+                CircleButton(iconName: "bell",
+                             action: router.goToNotification)
+                
             }
             .padding(.horizontal, 20)
             .padding(.top, 40)
+
         }
     }
 }
@@ -138,4 +141,6 @@ extension Color {
 
 #Preview {
     MainView()
+        .environmentObject(AppRouter())
 }
+

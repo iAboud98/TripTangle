@@ -23,6 +23,8 @@ struct RootView: View {
                     SignUpView()
                 case .main:
                     MainView()
+                case .notification:
+                    NotificationView()
             }
         }
         .transition(.opacity)

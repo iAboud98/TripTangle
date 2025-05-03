@@ -14,6 +14,7 @@ enum AppScreen {
     case login
     case signup
     case main
+    case notification
 }
 
 class AppRouter: ObservableObject {
@@ -39,6 +40,10 @@ class AppRouter: ObservableObject {
 
     func goToMain() {
         currentScreen = .main
+    }
+    
+    func goToNotification() {
+        currentScreen = .notification
     }
 
 }
