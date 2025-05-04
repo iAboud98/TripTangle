@@ -42,6 +42,11 @@ struct WelcomeView: View {
                     .onTapGesture {
                         router.goToSignup()
                     }
+                    .padding(.bottom, 10)
+                
+                SecondaryButton(title: "Off-line Service")
+                    .onTapGesture {
+                        router.goToOffline()                    }
 
             }
             .padding(40)

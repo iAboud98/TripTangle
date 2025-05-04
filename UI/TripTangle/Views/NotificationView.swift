@@ -1,42 +1,71 @@
-//
-//  NotificationView.swift
-//  TripTangle
-//
-//  Created by Aboud Fialah on 03/05/2025.
-//
-
 import SwiftUI
 
 struct NotificationView: View {
+    
+    @EnvironmentObject var router: AppRouter
+    @State private var navigateToPreferences = false
+    @State private var navigateToReceiver = false
+
     let notifications = [
         ("Anna invited you to a new group in Paris.", "Tap to view the group."),
-        ("Your group flight to Tokyo is now cheaper!", "Check for discounts."),
+        ("Aboud is offline and lost his flight Gate !", "Tap to answer"),
         ("Liam reacted to your travel post.", "See Liam's reaction."),
         ("3 new people are interested in Rome like you.", "Tap to learn more.")
     ]
     
     var body: some View {
-        VStack {
-            Text("Notifications")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.black)
-                .padding(.top, 75)
-            
-            Spacer()
-            
-            ForEach(notifications, id: \.0) { notification in
-                NotificationCard(title: notification.0, subtitle: notification.1) {
-                    print("Tapped on notification: \(notification.0)")
+        NavigationStack {
+            VStack {
+                HStack {
+                    Button(action: {
+                        router.goToMain()
+                    }) {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.black)
+                            .frame(width: 36, height: 36)
+                            .background(Color.gray.opacity(0.2))
+                            .clipShape(Circle())
+                    }
+                    .padding(.top, 70)
+                    .padding(.leading, 30)
+                    
+                    Spacer()
                 }
-                .padding(.horizontal, 20) // Added padding to the left and right of the card
-                .padding(.bottom, 10)
+                
+                Text("Notifications")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+                    .padding(.top, 75)
+                
+                Spacer()
+                
+                ForEach(notifications.indices, id: \.self) { index in
+                    NotificationCard(title: notifications[index].0, subtitle: notifications[index].1) {
+                        if index == 0 {
+                            navigateToPreferences = true
+                        }else if index == 1 {
+                            navigateToReceiver = true
+                        }else {
+                            print("Tapped on notification: \(notifications[index].0)")
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 10)
+                }
+
+                Spacer()
+                
+                NavigationLink(destination: TravelPreferencesView(groupId: 1), isActive: $navigateToPreferences) {
+                    EmptyView()
+                }
+                NavigationLink(destination: ReceiverView(), isActive: $navigateToReceiver) {
+                                    EmptyView()
+                                }
             }
-            
-            Spacer()
+            .background(Color.gray.opacity(0.3)) // Light gray with slight transparency
+            .edgesIgnoringSafeArea(.all)
         }
-        .background(Color.gray.opacity(0.4)) // Light gray with slight transparency
-        .edgesIgnoringSafeArea(.all)
     }
 }
 
@@ -57,10 +86,10 @@ struct NotificationCard: View {
                 Text(subtitle)
                     .font(.caption)
                     .foregroundColor(textColor.opacity(0.7))
-                    .lineLimit(nil) // Allow subtitle to wrap and adjust to the available space
+                    .lineLimit(nil)
             }
             .padding()
-            .frame(maxWidth: .infinity, alignment: .leading) // Allow card to expand with content
+            .frame(maxWidth: .infinity, alignment: .leading)
             .background(color)
             .cornerRadius(20)
             .overlay(
@@ -76,4 +105,3 @@ struct NotificationCard: View {
     NotificationView()
         .environmentObject(AppRouter())
 }
-

@@ -29,9 +29,22 @@
 		3DB10C902DC62F9900030058 /* TripTangleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripTangleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		58C17DB22DC71E2A00A8401D /* Exceptions for "TripTangle" folder in "TripTangle" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 3DB10C752DC62F9800030058 /* TripTangle */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3DB10C782DC62F9800030058 /* TripTangle */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				58C17DB22DC71E2A00A8401D /* Exceptions for "TripTangle" folder in "TripTangle" target */,
+			);
 			path = TripTangle;
 			sourceTree = "<group>";
 		};
@@ -378,9 +391,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TripTangle/Preview Content\"";
-				DEVELOPMENT_TEAM = C23FY2MJ8R;
+				DEVELOPMENT_TEAM = 554K46P284;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TripTangle/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NSBluetoothAlwaysUsageDescription;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -407,9 +423,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TripTangle/Preview Content\"";
-				DEVELOPMENT_TEAM = C23FY2MJ8R;
+				DEVELOPMENT_TEAM = 554K46P284;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TripTangle/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NSBluetoothAlwaysUsageDescription;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

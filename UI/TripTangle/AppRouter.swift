@@ -16,6 +16,7 @@ enum AppScreen {
     case main
     case notification
     case menu
+    case offline
 }
 
 class AppRouter: ObservableObject {
@@ -49,6 +50,10 @@ class AppRouter: ObservableObject {
     
     func goToMenu() {
         currentScreen = .menu
+    }
+    
+    func goToOffline() {
+        currentScreen = .offline
     }
 
 }

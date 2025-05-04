@@ -27,6 +27,8 @@ struct RootView: View {
                     NotificationView()
                 case .menu:
                     MenuView()
+                case .offline:
+                    OfflineView()
             }
         }
         .transition(.opacity)

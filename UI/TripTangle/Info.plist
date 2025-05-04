@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+   "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- your existing keys -->
+    <key>CFBundleGetInfoString</key>
+    <string></string>
+
+    <!-- Add these Bluetooth usage descriptions: -->
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>We use Bluetooth to discover and connect nearby TripTangle users.</string>
+
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>We advertise your presence over Bluetooth to allow group invitations.</string>
+
+    <!-- (iOS 13+) If you need “always and when in use” together: -->
+    <key>NSBluetoothAlwaysAndWhenInUseUsageDescription</key>
+    <string>We need Bluetooth access to keep your group session alive in the background.</string>
+</dict>
+</plist>
